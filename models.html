@@ -1,0 +1,26 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Спор моделей · PitchLab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+<header><a class="logo" href="index.html">Pitch<span style="color:var(--blue)">Lab</span><span class="ver">модель v1.0</span></a><nav><a href="index.html" class="">Главная</a><div class="drop"><a href="league/E0.html" class="">Premier League</a><div class="menu"><a href="league/E0_table.html" class="">Реальная таблица</a><a href="league/E0_model.html" class="">Ожидания модели</a><a href="league/E0_matches.html" class="">Матчи</a><a href="league/E0_players.html" class="">Игроки</a></div></div><div class="drop"><a href="league/E1.html" class="">Championship</a><div class="menu"><a href="league/E1_table.html" class="">Реальная таблица</a><a href="league/E1_model.html" class="">Ожидания модели</a><a href="league/E1_matches.html" class="">Матчи</a><a href="league/E1_players.html" class="">Игроки</a></div></div><a href="models.html" class="on">Спор моделей</a><a href="fairness.html" class="">Журнал честности</a></nav>
+<div class="tag" style="color:var(--dim);font-size:13px;margin-left:auto">спор моделей</div></header>
+<main>
+<h1>Спор моделей</h1>
+<p style="color:var(--dim)">Три претендента судятся на одном и том же журнале
+прогнозов. Метрика — Brier (меньше = лучше) и точность по исходу. Зелёным —
+победитель спора в каждой лиге.</p>
+<div class="tw"><table>><tr><th>Претендент</th><th>Точность</th><th>Brier</th><th></th></tr>
+<tr><td colspan="4"><b>Premier League</b> — 860 матчей с линией</td></tr><tr ><td>Наша модель v1.0</td><td>46.6%</td><td><b>0.6239</b></td><td></td></tr><tr style='background:#e8f5ec'><td>Линия B365 (внешний рынок)</td><td>52.1%</td><td><b>0.5934</b></td><td></td></tr><tr ><td>Смесь: 0% наша + 100% линия</td><td>52.1%</td><td><b>0.5934</b></td><td>вес подобран бэктестом</td></tr><tr><td colspan="4"><b>Championship</b> — 1284 матчей с линией</td></tr><tr ><td>Наша модель v1.0</td><td>43.5%</td><td><b>0.6503</b></td><td></td></tr><tr style='background:#e8f5ec'><td>Линия B365 (внешний рынок)</td><td>47.5%</td><td><b>0.6238</b></td><td></td></tr><tr ><td>Смесь: 0% наша + 100% линия</td><td>47.5%</td><td><b>0.6238</b></td><td>вес подобран бэктестом</td></tr><tr><td colspan="4"><b>Вместе (все матчи)</b> — 2144 матчей с линией</td></tr><tr ><td>Наша модель v1.0</td><td>44.8%</td><td><b>0.6397</b></td><td></td></tr><tr ><td>Линия B365 (внешний рынок)</td><td>49.3%</td><td><b>0.6116</b></td><td></td></tr><tr style='background:#e8f5ec'><td>Смесь: 0% наша + 100% линия</td><td>49.3%</td><td><b>0.6116</b></td><td>вес подобран бэктестом</td></tr></table></div>
+<div class="panel"><b>Вердикт прослушивания:</b> ни одна точка зрения не добавила ценности поверх линии: лучший прогноз — чистая линия B365, вес нашей модели по бэктесту 0. Неудобно, но именно так устроена прослушка: вес дают только за реальное улучшение. Наша v1.0 должна заработать вес в Шагах 4–6 (игроки, тренеры) — журнал это покажет.
+Каждая новая точка зрения (игроки, тренеры, внешние рейтинги) получит вес
+только если улучшит прогноз на журнале — иначе её вес ноль.</div>
+<p style="color:var(--dim)">Прогнозы на будущие матчи пока делает чистая v1.0:
+фид расписания не отдаёт коэффициенты букмекеров на будущие игры. Как только
+подключим фид с линиями, метамодель со смесью этих весов станет v1.1.</p>
+<a href="index.html">← на главную</a>
+</main>
+<footer>Данные: football-data.co.uk · модель и журнал обновляются автоматически ·
+ни один прогноз не удаляется · сайт об аналитике, не о заработке</footer>
+</body></html>

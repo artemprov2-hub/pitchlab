@@ -1,0 +1,39 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PitchLab — футбольная аналитика</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+<header><a class="logo" href="index.html">Pitch<span style="color:var(--blue)">Lab</span><span class="ver">модель v1.0</span></a><nav><a href="index.html" class="on">Главная</a><div class="drop"><a href="league/E0.html" class="">Premier League</a><div class="menu"><a href="league/E0_table.html" class="">Реальная таблица</a><a href="league/E0_model.html" class="">Ожидания модели</a><a href="league/E0_matches.html" class="">Матчи</a><a href="league/E0_players.html" class="">Игроки</a></div></div><div class="drop"><a href="league/E1.html" class="">Championship</a><div class="menu"><a href="league/E1_table.html" class="">Реальная таблица</a><a href="league/E1_model.html" class="">Ожидания модели</a><a href="league/E1_matches.html" class="">Матчи</a><a href="league/E1_players.html" class="">Игроки</a></div></div><a href="models.html" class="">Спор моделей</a><a href="fairness.html" class="">Журнал честности</a></nav>
+<div class="tag" style="color:var(--dim);font-size:13px;margin-left:auto">аналитическая платформа</div></header>
+<main>
+<h1>Интеллектуальная аналитика футбола</h1>
+<p style="color:var(--dim)">Модель учится на истории каждой лиги и перед каждым матчем
+называет вероятности исходов. После матча — сверка с фактом. Все 860+ прогнозов,
+попадания и промахи, открыты в <a href="fairness.html">журнале честности</a>.</p>
+<div class="cards"><div class="card"><h3><a href="league/E0.html">Premier League</a></h3>
+<p style="color:var(--dim)">Сильнейшие по модели: Brighton 1634 · Arsenal 1595 · Man City 1528</p>
+<p><span class="kpi"><b>860</b><span>матчей в журнале</span></span>
+<span class="kpi"><b>46.6%</b><span>точность</span></span></p>
+<p><a href="league/E0.html">таблица силы →</a></p></div><div class="card"><h3><a href="league/E1.html">Championship</a></h3>
+<p style="color:var(--dim)">Сильнейшие по модели: Norwich 1613 · Birmingham 1596 · West Ham 1558</p>
+<p><span class="kpi"><b>1284</b><span>матчей в журнале</span></span>
+<span class="kpi"><b>43.5%</b><span>точность</span></span></p>
+<p><a href="league/E1.html">таблица силы →</a></p></div></div>
+<h2>Качество модели (публично, включая провалы)</h2>
+<div class="panel">
+<span class="kpi"><b>960/2144</b><span>попаданий по исходу (44.8%)</span></span>
+<span class="kpi"><b>0.6397</b><span>Brier модели (меньше = лучше)</span></span>
+<span class="kpi"><b>0.6116</b><span>Brier линии B365 (эталон)</span></span></div>
+<p style="color:var(--dim)">Сейчас модель проигрывает линии букмекера — это ожидаемо
+для первой простой модели; сила платформы в агрегации источников (Шаг 3)
+и публичной проверяемости.</p>
+<h2>Версии модели</h2>
+<div class="panel"><p><span class="kpi"><b>v1.0</b><span>с 11.11.2026</span></span>960/2144 попаданий (44.8%), Brier 0.6397<br><span style="color:var(--dim);font-size:13px">базовая модель AttDefElo: сила атаки/обороны + домашний фактор. Без игроков, тренеров и внешних рейтингов.</span></p></div>
+<p style="color:var(--dim)">Каждый прогноз в журнале помечен версией модели, которая
+его сделала. Старые версии не удаляются — по ним видно, как платформа училась:
+что ошибалась раньше и исправилась позже.</p>
+</main>
+<footer>Данные: football-data.co.uk · модель и журнал обновляются автоматически ·
+ни один прогноз не удаляется · сайт об аналитике, не о заработке</footer>
+</body></html>
